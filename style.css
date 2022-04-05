@@ -5,15 +5,10 @@ body {
 
 h1 {
     text-align: center;
-    padding: 10px;
-    background-color: darkblue;
-    color: aliceblue;
-    width: 100%;
-    margin: 0px;
 }
 
 .input {
-    margin: 50px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,4 +18,35 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+input {
+    border: 0;
+    margin: 10px;
+    width: 300px;
+    font-size: 1.2em;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    appearance: textfield;
+}
+
+select {
+    border: 0px;
+    appearance: none;
+    margin: 10px;
+    width: 300px;
+    font-size: 1.2em;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    border-radius: 5px;
 }
