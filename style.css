@@ -1,20 +1,26 @@
 body {
+    background-color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    background-color: darkblue;
+    color: aliceblue;
     width: 100%;
+    margin: 0px;
+}
+
+.input {
+    margin: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#flow_rate {
-    width: 200px;
-}
-
-#diameter {
-    width: 200px;
-}
-
-.label_name {
-    display: block;
-    width: 120px;
-    float: left;
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
