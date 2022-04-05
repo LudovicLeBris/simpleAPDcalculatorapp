@@ -13,9 +13,12 @@
         <h1>Simple APD calculator</h1>
     </nav>
     <div class="input">
-        <input id="flow_rate" type="number" placeholder="Enter flow rate in m3/h"><br>
+        <label for="flow_rate" class="label_name">Flow rate</label>
+        <input id="flow_rate" type="number" name="flow_rate">
+        <label for="flow_rate" class="label_unit">m³/h</label><br>
+        <label for="diameter" class="label_name">Duct diameter</label>
         <select name="diameter" id="diameter">
-            <option value="0" selected>Select duct section (mm)</option>
+            <option value="0" selected>Select duct section</option>
             <option value="80">80</option>
             <option value="160">160</option>
             <option value="200">200</option>
@@ -33,13 +36,26 @@
             <option value="1000">1000</option>
             <option value="1120">1120</option>
             <option value="1250">1250</option>
-        </select><br>
-        <input id="length" type="number" name="length" placeholder="Enter duct's length in m"><br>
+        </select>
+        <label for="diameter">mm</label><br>
         <input id="calculate" type="submit" value="Calculate">
     </div>
     <div class="results">
+        <h3>Results</h3>
         <p>Flow speed : <span id="flow_speed">0</span> m/s</p>
-        <p>Linear air pressure drop : <span id="linear_apd">0</span> Pa</p>
+        <h4>Linar APD</h4>
+        <p class="result">Linear air pressure drop : <span id="linear_apd">0</span> Pa/m</p>
+        <h4>Singular APD</h4>
+        <p>90° elbow : <span id="90_elbow">0</span> Pa/elbow</p>
+        <p>60° elbow : <span id="60_elbow">0</span> Pa/elbow</p>
+        <p>45° elbow : <span id="45_elbow">0</span> Pa/elbow</p>
+        <p>30° elbow : <span id="30_elbow">0</span> Pa/elbow</p>
+        <p>90° separation tee : <span id="90_sep_tee">0</span> Pa/separtion</p>
+        <p>90° junction tee : <span id="90_junc_tee">0</span> Pa/junction</p>
+        <p>45° separation tee : <span id="45_sep_tee">0</span> Pa/separation</p>
+        <p>45° junction tee : <span id="45_junc_tee">0</span> Pa/junction</p>
+        <p>Long reducer : <span id="long_reducer">0</span> Pa/reducer</p>
+        <p>Pressed reducer : <span id="pressed_reducer">0</span> Pa/reducer</p>
     </div>
 </body>
 </html>
