@@ -15,9 +15,7 @@ h1 {
 }
 
 .results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 input {
@@ -49,4 +47,28 @@ select {
     padding: 10px 10px 10px 10px;
     text-align: center;
     border-radius: 5px;
+}
+
+.singularity img {
+    width: 100px;
+    background-color: white;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.singularity {
+    border: 1px solid;
+    width: max-content;
+}
+
+.singularity p {
+    text-align: center;
+}
+
+.singular_APD {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
