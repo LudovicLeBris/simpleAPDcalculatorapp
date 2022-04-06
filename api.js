@@ -1,6 +1,7 @@
 const air_density = 1.2059;
 const air_viscosity = 0.000015081;
 const roughness = 0.000010;
+const select_diameter = document.getElementById("diameter")
 const calculate = document.getElementById("calculate");
 const singularities = {
     "90_elbow": 0.4,
@@ -15,15 +16,20 @@ const singularities = {
     "pressed_reducer": 0.35
 }
 
+select_diameter.addEventListener("change", function(e){
+    const Flow_rate = document.getElementById("flow_rate").value;
+    const Diameter = document.getElementById("diameter").value;
+    document
+        .getElementById("flow_speed")
+        .textContent = flow_speed(Flow_rate, Diameter)
+})
+
 calculate.addEventListener("click", function(e) {
     // e.preventDefault();
     // e.stopPropagation();
     const Flow_rate = document.getElementById("flow_rate").value;
     const Diameter = document.getElementById("diameter").value;
     const Flow_speed = flow_speed(Flow_rate, Diameter);
-    document
-        .getElementById("flow_speed")
-        .textContent = Flow_speed;
     const Linear_apd = linear_apd(Diameter, Flow_speed);
     document
         .getElementById("linear_apd")
