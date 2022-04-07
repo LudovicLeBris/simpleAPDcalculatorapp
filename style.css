@@ -23,7 +23,7 @@ input {
     margin: 10px;
     width: 300px;
     font-size: 1.2em;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0 10px 0;
     text-align: center;
     border-radius: 5px;
 }
@@ -44,9 +44,20 @@ select {
     margin: 10px;
     width: 300px;
     font-size: 1.2em;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0 10px 0;
     text-align: center;
     border-radius: 5px;
+}
+
+.singular_APD {
+    display: grid;
+    grid-gap : 1rem;
+    justify-content: center;
+}
+
+.singularity {
+    border: 0px solid;
+    width: auto;
 }
 
 .singularity img {
@@ -54,21 +65,28 @@ select {
     background-color: white;
 }
 
-figcaption {
-    text-align: center;
-}
-
-.singularity {
-    border: 1px solid;
-    width: max-content;
-}
-
 .singularity p {
     text-align: center;
 }
 
-.singular_APD {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+figcaption {
+    text-align: center;
+}
+
+@media (min-width: 500px) {
+    .singular_APD {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 800px) {
+    .singular_APD {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .singular_APD {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
