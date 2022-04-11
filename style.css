@@ -1,5 +1,5 @@
 body {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -14,8 +14,20 @@ h1 {
     align-items: center;
 }
 
-.results {
-    text-align: center;
+#results {
+    text-align: center ;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition : opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+#results.fade {
+    visibility: visible;
+    opacity: 1;
 }
 
 input {
@@ -62,7 +74,7 @@ select {
 
 .singularity img {
     width: 100px;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .singularity p {

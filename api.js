@@ -3,6 +3,7 @@ const air_viscosity = 0.000015081;
 const roughness = 0.000010;
 const select_diameter = document.getElementById("diameter")
 const calculate = document.getElementById("calculate");
+const results = document.getElementById("results");
 const singularities = {
     "90_elbow": 0.4,
     "60_elbow": 0.31,
@@ -16,30 +17,38 @@ const singularities = {
     "pressed_reducer": 0.35
 }
 
-select_diameter.addEventListener("change", function(e){
+function flowSpeedText() {
     const Flow_rate = document.getElementById("flow_rate").value;
     const Diameter = document.getElementById("diameter").value;
-    document
-        .getElementById("flow_speed")
-        .textContent = flow_speed(Flow_rate, Diameter)
-})
+    if (Flow_rate != 0) {
+        document
+            .getElementById("flow_speed")
+            .textContent = flow_speed(Flow_rate, Diameter);
+    } else {
+        select_diameter.value = "0"
+        alert("Numeric value is missing in flow rate field.");
+    }
+}
 
-calculate.addEventListener("click", function(e) {
-    // e.preventDefault();
-    // e.stopPropagation();
+function calculateEvent() {
     const Flow_rate = document.getElementById("flow_rate").value;
     const Diameter = document.getElementById("diameter").value;
     const Flow_speed = flow_speed(Flow_rate, Diameter);
     const Linear_apd = linear_apd(Diameter, Flow_speed);
-    document
-        .getElementById("linear_apd")
-        .textContent = Linear_apd;
-    for (let sing in singularities) {
+    if (Flow_rate != 0 && Diameter != 0 ) {
         document
-            .getElementById(sing)
-            .textContent = singular_apd(singularities[sing], Flow_speed);
+            .getElementById("linear_apd")
+            .textContent = Linear_apd;
+        for (let sing in singularities) {
+            document
+                .getElementById(sing)
+                .textContent = singular_apd(singularities[sing], Flow_speed);
+        results.classList.add("fade");
+        }
+    } else {
+        alert("Numeric value is missing in flow rate field and/or a duct section is not selected.");
     }
-})
+}
 
 function flow_speed(flow_rate, diameter) {
     const section = (Math.PI * (diameter / 1000) ** 2) / 4;

@@ -14,7 +14,7 @@
     </nav>
     <div class="input">
         <input id="flow_rate" type="number" name="flow_rate" placeholder="Enter flow rate in m³/h">
-        <select name="diameter" id="diameter">
+        <select name="diameter" id="diameter" onchange="flowSpeedText()">
             <option value="0" disabled selected hidden>Select duct section</option>
             <option value="80">80</option>
             <option value="160">160</option>
@@ -35,9 +35,9 @@
             <option value="1250">1250</option>
         </select>
         <p>Flow speed : <span id="flow_speed">0</span> m/s</p>
-        <input id="calculate" type="submit" value="Calculate">
+        <input id="calculate" type="submit" onclick="calculateEvent()" value="Calculate">
     </div>
-    <div class="results">
+    <div id="results">
         <h3>Results</h3>
         <h4>Linar APD</h4>
         <p class="result">Linear air pressure drop : <span id="linear_apd">0</span> Pa/m</p>
