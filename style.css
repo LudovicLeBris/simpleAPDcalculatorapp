@@ -1,6 +1,14 @@
+* {margin: 0;}
+
 body {
     /* background-color: aliceblue; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: dodgerblue;
+    padding: 5px 0 5px 0;
+    color: white;
 }
 
 h1 {
@@ -12,6 +20,10 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.input p {
+    color: darkgray;
 }
 
 #results {
@@ -30,7 +42,23 @@ h1 {
     opacity: 1;
 }
 
+#results h3 {
+    background-color: dodgerblue;
+    color: white;
+    padding: 5px;
+}
+
+#results h4 {
+    padding: 10px;
+}
+
+#results span {
+    border-bottom: 1px solid dodgerblue;
+    font-weight: bold;
+}
+
 input {
+    background-color: rgb(240, 240, 240);
     border: 0;
     margin: 10px;
     width: 300px;
@@ -38,6 +66,21 @@ input {
     padding: 10px 0 10px 0;
     text-align: center;
     border-radius: 5px;
+}
+
+#flow_rate:hover {
+    box-shadow: 2px 2px 5px dodgerblue;
+    transition: 0.5s;
+}
+
+#flow_rate:focus {
+    outline: none;
+    border: solid 1px dodgerblue;
+    box-shadow: 2px 2px 5px dodgerblue;
+}
+
+#flow_rate::placeholder {
+    color: black;
 }
 
 input::-webkit-outer-spin-button,
@@ -51,6 +94,7 @@ input[type=number] {
 }
 
 select {
+    background-color: rgb(240, 240, 240);
     border: 0px;
     appearance: none;
     margin: 10px;
@@ -61,6 +105,30 @@ select {
     border-radius: 5px;
 }
 
+select:focus {
+    outline: none;
+    border: solid 1px dodgerblue;
+}
+
+select:hover {
+    transition: 0.5s;
+    box-shadow: 2px 2px 5px dodgerblue;
+}
+
+option:checked {
+    display: none;
+}
+
+#calculate {
+    background-color: dodgerblue;
+    color: white;
+}
+
+#calculate:hover {
+    background-color: rgb(30, 101, 255);
+    transition: 0.5s;
+}
+
 .singular_APD {
     display: grid;
     grid-gap : 1rem;
@@ -68,7 +136,6 @@ select {
 }
 
 .singularity {
-    border: 0px solid;
     width: auto;
 }
 
