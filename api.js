@@ -4,6 +4,7 @@ const roughness = 0.000010;
 const select_diameter = document.getElementById("diameter")
 const calculate = document.getElementById("calculate");
 const results = document.getElementById("results");
+const reset = document.getElementById("reset");
 const singularities = {
     "90_elbow": 0.4,
     "60_elbow": 0.31,
@@ -78,3 +79,8 @@ function linear_apd(diameter, flow_speed) {
 function singular_apd(singularity, flow_speed) {
     return (singularity * air_density * (flow_speed ** 2)/2).toFixed(2);
 }
+
+reset.addEventListener("click", function(){
+    location.reload();
+    return false;
+})

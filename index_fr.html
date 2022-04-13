@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple APD calculator</title>
+    <title>Calculs de PdC simple</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript">
-        let language = navigator.language;
-        if (language.indexOf('fr') > -1) {document.location.href = "index_fr.html";}
-    </script>
     <script src="api.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Simple APD calculator</h1>
+        <h1>Calculs de PdC simple</h1>
+        <button id="reset">reset</button>
     </header>
     <div class="input">
-        <input id="flow_rate" type="number" name="flow_rate" placeholder="Enter flow rate in m³/h">
+        <input id="flow_rate" type="number" name="flow_rate" placeholder="Saisir le débit en m³/h">
         <select name="diameter" id="diameter" onchange="flowSpeedText()">
-            <option value="0" disabled selected hidden>Select duct section</option>
+            <option value="0" disabled selected hidden>Choisir la section de gaine</option>
             <option value="80">80</option>
             <option value="160">160</option>
             <option value="200">200</option>
@@ -38,86 +35,86 @@
             <option value="1120">1120</option>
             <option value="1250">1250</option>
         </select>
-        <p>Flow speed : <span id="flow_speed">0</span> m/s</p>
-        <input id="calculate" type="submit" onclick="calculateEvent()" value="Calculate">
+        <p>Vitesse d'air : <span id="flow_speed">0</span> m/s</p>
+        <input id="calculate" type="submit" onclick="calculateEvent()" value="Calculer">
     </div>
     <div id="results">
-        <h3>Results</h3>
+        <h3>Résultats</h3>
         <div id="linearAPD_result">
-            <h4>Linar APD</h4>
-            <p class="result">Linear air pressure drop : <span id="linear_apd">0</span> Pa/m</p>
+            <h4>PdC linéaire</h4>
+            <p class="result">Perte de charge linéaire : <span id="linear_apd">0</span> Pa/m</p>
         </div>
-        <h4>Singular APD</h4>
+        <h4>PdC singulières</h4>
         <div class="singular_APD">
             <div class="singularity 90_elbow">
                 <figure>
                     <img src="static/img/90°_elbow.png" alt="A 90° elbow pictogram">
-                    <figcaption>90° elbow</figcaption>
+                    <figcaption>Coude à 90°</figcaption>
                 </figure>
-                <p class="result"><span id="90_elbow">0</span> Pa/elbow</p>
+                <p class="result"><span id="90_elbow">0</span> Pa/coude</p>
             </div>
             <div class="singularity 60_elbow">
                 <figure>
                     <img src="static/img/60°_elbow.png" alt="A 60° elbow pictogram">
-                    <figcaption>60° elbow</figcaption>
+                    <figcaption>Coude à 60°</figcaption>
                 </figure>
-                <p class="result"><span id="60_elbow">0</span> Pa/elbow</p>
+                <p class="result"><span id="60_elbow">0</span> Pa/coude</p>
             </div>
             <div class="singularity 45_elbow">
                 <figure>
                     <img src="static/img/45°_elbow.png" alt="A 45° elbow pictogram">
-                    <figcaption>45° elbow</figcaption>
+                    <figcaption>Coude à 45°</figcaption>
                 </figure>
-                <p class="result"><span id="45_elbow">0</span> Pa/elbow</p>
+                <p class="result"><span id="45_elbow">0</span> Pa/coude</p>
             </div>
             <div class="singularity 30_elbow">
                 <figure>
                     <img src="static/img/30°_elbow.png" alt="A 30° elbow pictogram">
-                    <figcaption>30° elbow</figcaption>
+                    <figcaption>Coude à 30°</figcaption>
                 </figure>
-                <p class="result"><span id="30_elbow">0</span> Pa/elbow</p>
+                <p class="result"><span id="30_elbow">0</span> Pa/coude</p>
             </div>
             <div class="singularity 90_sep_tee">
                 <figure>
                     <img src="static/img/90°_separation_tee.png" alt="A 90° separation tee pictogram">
-                    <figcaption>90° separation tee</figcaption>
+                    <figcaption>Piquage de séparation à 90°</figcaption>
                 </figure>
-                <p class="result"><span id="90_sep_tee">0</span> Pa/separation</p>
+                <p class="result"><span id="90_sep_tee">0</span> Pa/séparation</p>
             </div>
             <div class="singularity 90_junc_tee">
                 <figure>
                     <img src="static/img/90°_junction_tee.png" alt="A 90° junction tee pictogram">
-                    <figcaption>90° junction tee</figcaption>
+                    <figcaption>Piquage de jonction à 90°</figcaption>
                 </figure>
-                <p class="result"><span id="90_junc_tee">0</span> Pa/junction</p>
+                <p class="result"><span id="90_junc_tee">0</span> Pa/jonction</p>
             </div>
             <div class="singularity 45_sep_tee">
                 <figure>
                     <img src="static/img/45°_separation_tee.png" alt="A 45° separation tee pictogram">
-                    <figcaption>45° separation tee</figcaption>
+                    <figcaption>Piquage de séparation à 45°</figcaption>
                 </figure>
-                <p class="result"><span id="45_sep_tee">0</span> Pa/separation</p>
+                <p class="result"><span id="45_sep_tee">0</span> Pa/séparation</p>
             </div>
             <div class="singularity 45_junc_tee">
                 <figure>
                     <img src="static/img/45°_junction_tee.png" alt="A 45° junction tee pictogram">
-                    <figcaption>45° junction tee</figcaption>
+                    <figcaption>Piquage de jonction à 45°</figcaption>
                 </figure>
-                <p class="result"><span id="45_junc_tee">0</span> Pa/junction</p>
+                <p class="result"><span id="45_junc_tee">0</span> Pa/jonction</p>
             </div>
             <div class="singularity long_reducer">
                 <figure>
                     <img src="static/img/Long_reducer.png" alt="A long reducer pictogram">
-                    <figcaption>Long reducer</figcaption>
+                    <figcaption>Réduction avec amorce</figcaption>
                 </figure>
-                <p class="result"><span id="long_reducer">0</span> Pa/reducer</p>
+                <p class="result"><span id="long_reducer">0</span> Pa/réduction</p>
             </div>
             <div class="singularity pressed_reducer">
                 <figure>
                     <img src="static/img/Pressed_reducer.png" alt="A pressed reducer pictogram">
-                    <figcaption>Pressed reducer</figcaption>
+                    <figcaption>Réduction sans amorce</figcaption>
                 </figure>
-                <p class="result"><span id="pressed_reducer">0</span> Pa/reducer</p>
+                <p class="result"><span id="pressed_reducer">0</span> Pa/réduction</p>
             </div>
         </div>
     </div>

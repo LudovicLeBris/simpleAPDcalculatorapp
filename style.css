@@ -144,7 +144,13 @@ option:checked {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap : 1rem;
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 0 20px;
+}
+
+@media screen and (min-width: 1300px) {
+    .singular_APD {
+        margin: 0 auto;
+    }
 }
 
 #linearAPD_result {
