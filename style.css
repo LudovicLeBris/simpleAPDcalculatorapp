@@ -1,4 +1,10 @@
-* {margin: 0;}
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     /* background-color: aliceblue; */
@@ -46,6 +52,7 @@ h1 {
     background-color: dodgerblue;
     color: white;
     padding: 5px;
+    font-size: 1.3rem;
 }
 
 #results h4 {
@@ -53,8 +60,11 @@ h1 {
 }
 
 #results span {
-    border-bottom: 1px solid dodgerblue;
     font-weight: bold;
+    background-color: dodgerblue;
+    color: white;
+    padding: 1px;
+    border-radius: 2px;
 }
 
 input {
@@ -131,12 +141,24 @@ option:checked {
 
 .singular_APD {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap : 1rem;
-    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+#linearAPD_result {
+    border-bottom: solid 1px dodgerblue;
+    margin: 0 80px;
+    padding-bottom: 20px;
 }
 
 .singularity {
-    width: auto;
+    border: solid 1px dodgerblue;
+    padding: 10px 0;
+    /* background-color: rgba(54, 156, 240, 0.1); */
+    border-radius: 5px
+    /* width: auto; */
 }
 
 .singularity img {
@@ -152,20 +174,3 @@ figcaption {
     text-align: center;
 }
 
-@media (min-width: 500px) {
-    .singular_APD {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 800px) {
-    .singular_APD {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .singular_APD {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
