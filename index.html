@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple APD calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         let language = navigator.language;
         if (language.indexOf('fr') > -1) {document.location.href = "index_fr.html";}
-    </script>
+    </script> -->
     <script src="api.js" defer></script>
 </head>
 <body>
     <header>
+        <img id="reset" src="/static/img/refresh.png" alt="refresh icon">
         <h1>Simple APD calculator</h1>
+        <img id="menu" src="/static/img/menu.png" alt="menu icon">
     </header>
     <div class="input">
         <input id="flow_rate" type="number" name="flow_rate" placeholder="Enter flow rate in m³/h">

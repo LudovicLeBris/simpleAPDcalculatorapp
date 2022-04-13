@@ -15,10 +15,18 @@ header {
     background-color: dodgerblue;
     padding: 5px 0 5px 0;
     color: white;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+header img {
+    height: 100%;
 }
 
 h1 {
     text-align: center;
+    margin: 10px;
 }
 
 .input {
