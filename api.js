@@ -5,6 +5,7 @@ const select_diameter = document.getElementById("diameter")
 const calculate = document.getElementById("calculate");
 const results = document.getElementById("results");
 const reset = document.getElementById("reset");
+const actualPage = location.href.split("/").pop();
 const singularities = {
     "90_elbow": 0.4,
     "60_elbow": 0.31,
@@ -27,7 +28,12 @@ function flowSpeedText() {
             .textContent = flow_speed(Flow_rate, Diameter);
     } else {
         select_diameter.value = "0"
-        alert("Numeric value is missing in flow rate field.");
+        if (actualPage === "index_fr.html") {
+            alert("Il manque une valeur numérique dans le champ débit.");
+        } else {
+            alert("Numeric value is missing in flow rate field.");
+        }
+        
     }
 }
 
@@ -47,7 +53,11 @@ function calculateEvent() {
         results.classList.add("fade");
         }
     } else {
-        alert("Numeric value is missing in flow rate field and/or a duct section is not selected.");
+        if (actualPage === "index_fr.html") {
+            alert("Il manque une valeur dans le champs débit et/ou un diamètre n'est pas sélectionné.");
+        } else {
+            alert("Numeric value is missing in flow rate field and/or a duct section is not selected.");
+        } 
     }
 }
 

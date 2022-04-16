@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple APD calculator</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script type="text/javascript">
+<!--     <script type="text/javascript">
         let language = navigator.language;
         let lastPage = document.referrer.split("/").pop();
         if (language.indexOf('fr') > -1 && lastPage !== "index_fr.html") {document.location.href = "index_fr.html";}
     </script> -->
     <script src="api.js" defer></script>
+    <script src="nav.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,14 +26,15 @@
         <a href="javascript:void(0)" onclick="toggle('techInfo')">Technicals informations</a>
         <p id="techInfo" class="toggleinfo">
             The calculations methods used in this software is strongly inspired by 
-            <a class="navLink" href="https://www.costic.com/">COSTIC methods</a>.<br>
+            <a class="navLink" href="https://www.costic.com/">COSTIC</a> methods.<br>
             The formula used for the linear air pressure drop calculation is the 
             <a class="navLink" href="https://www.engineeringtoolbox.com/colebrook-equation-d_1031.html">Colebrook equation</a>.<br>
             For all calculations, the default air characteristics are : 20°C for temperature and an atmospheric pressure at 0m above sea level.
         </p>
         <a href="javascript:void(0)" onclick="toggle('about')">About</a>
         <p id="about" class="toggleInfo">
-            prout
+            Copyright 2022 - Le Bris Ludovic<br>
+            contact : <a href="mailto:ludovic.lebris@gmail.com">ludovic.lebris@gmail.com</a>
         </p>
     </nav>
     <div class="input">
@@ -140,31 +142,5 @@
             </div>
         </div>
     </div>
-    <script>
-        function openNav() {
-            document.getElementById("sideNavigation").style.width = "33%";
-        }
-        
-        document.getElementById("sideNavigation").addEventListener('click', e => {
-            if (e.target !== e.currentTarget) {} else {
-                closeNav();
-            }
-        });
-
-        function closeNav() {
-            document.getElementById("sideNavigation").style.width = "0";
-            document.getElementById("techInfo").style.display = "none"
-            document.getElementById("about").style.display = "none"
-        }
-
-        function toggle(id) {
-            let info = document.getElementById(id).style;
-            if (info.display === "block") {
-                info.display = "none";
-            } else {
-                info.display = "block";
-            }
-        }
-        </script>
 </body>
 </html>

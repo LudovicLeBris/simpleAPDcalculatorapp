@@ -222,9 +222,13 @@ figcaption {
     margin-left: 25px;
 }
 
+.sidenav p {
+    color:midnightblue;
+}
+
 .sidenav p a {
     text-decoration: initial;
-    color: initial;
+    color: midnightblue;
     padding: 0;
     font-size: 16px;
     display: initial;

@@ -7,6 +7,7 @@
     <title>Calculs de PdC simple</title>
     <link rel="stylesheet" href="style.css">
     <script src="api.js" defer></script>
+    <script src="nav.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,15 +20,16 @@
         <a href="index.html">Language : english</a>
         <a href="javascript:void(0)" onclick="toggle('techInfo')">Informations techniques</a>
         <p id="techInfo" class="toggleinfo">
-            La méthode de calcul de ce logiciel est fortement inspiré par la  
-            <a class="navLink" href="https://www.costic.com/">méthode du COSTIC</a>.<br>
+            La méthode de calcul de ce logiciel est fortement inspirée par la méthode du  
+            <a class="navLink" href="https://www.costic.com/">COSTIC</a>.<br>
             La formule utilisée pour les pertes de charge linéaire est l' 
             <a class="navLink" href="https://www.engineeringtoolbox.com/colebrook-equation-d_1031.html">équation de Coolebrook</a>.<br>
             Pour tous les calculs, les caractéristiques de l'air par défaut sont : 20°C pour la température et une pression atmosphérique à 0m du niveau de la mer.
         </p>
-        <a href="javascript:void(0)" onclick="toggle('about')">A propos</a>
+        <a href="javascript:void(0)" onclick="toggle('about')">&Agrave; propos</a>
         <p id="about" class="toggleInfo">
-            prout
+            Copyright 2022 - Le Bris Ludovic<br>
+            contact : <a href="mailto:ludovic.lebris@gmail.com">ludovic.lebris@gmail.com</a>
         </p>
     </nav>
     <div class="input">
@@ -135,31 +137,5 @@
             </div>
         </div>
     </div>
-    <script>
-        function openNav() {
-            document.getElementById("sideNavigation").style.width = "33%";
-        }
-                
-        document.getElementById("sideNavigation").addEventListener('click', e => {
-            if (e.target !== e.currentTarget) {} else {
-                closeNav();
-            }
-        });
-        
-        function closeNav() {
-            document.getElementById("sideNavigation").style.width = "0";
-            document.getElementById("techInfo").style.display = "none"
-            document.getElementById("about").style.display = "none"
-        }
-
-        function toggle(id) {
-            let info = document.getElementById(id).style;
-            if (info.display === "block") {
-                info.display = "none";
-            } else {
-                info.display = "block";
-            }
-        }
-        </script>
 </body>
 </html>
