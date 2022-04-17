@@ -1,0 +1,21 @@
+{
+    "short_name": "sAPDcal",
+    "name": "Simple APP calculator",
+    "icons": [
+        {
+            "src": "/static/img/sAPDcal-ico_192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/static/img/sAPDcal-ico_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#1E90FF",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#1E90FF"
+}
