@@ -1,6 +1,6 @@
 {
     "short_name": "sAPDcal",
-    "name": "Simple APP calculator",
+    "name": "Simple APD calculator",
     "icons": [
         {
             "src": "/static/img/sAPDcal-ico_192.png",
