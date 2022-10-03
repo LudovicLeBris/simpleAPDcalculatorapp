@@ -16,10 +16,10 @@
         <img id="menu" src="/static/img/menu.png" alt="menu icon" onclick="openNav()">
     </header>
     <nav id="sideNavigation" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">H</a>
         <a href="index.html">Language : english</a>
         <a href="javascript:void(0)" onclick="toggle('techInfo')">Informations techniques</a>
-        <p id="techInfo" class="toggleinfo">
+        <p id="techInfo">
             La méthode de calcul de ce logiciel est fortement inspirée par la méthode du  
             <a class="navLink" href="https://www.costic.com/">COSTIC</a>.<br>
             La formule utilisée pour les pertes de charge linéaire est l' 
@@ -32,7 +32,7 @@
             contact : <a href="mailto:ludovic.lebris@gmail.com">ludovic.lebris@gmail.com</a>
         </p>
     </nav>
-    <div class="input">
+    <div class="inputs">
         <input id="flow_rate" type="number" name="flow_rate" placeholder="Saisir le débit en m³/h">
         <select name="diameter" id="diameter" onchange="flowSpeedText()">
             <option value="0" disabled selected hidden>Choisir la section de gaine</option>
@@ -55,7 +55,7 @@
             <option value="1250">1250</option>
         </select>
         <p>Vitesse d'air : <span id="flow_speed">0</span> m/s</p>
-        <input id="calculate" type="submit" onclick="calculateEvent()" value="Calculer">
+        <input id="calculate" class="btn_calc" type="submit" onclick="calculateEvent()" value="Calculer">
     </div>
     <div id="results">
         <h3>Résultats</h3>
