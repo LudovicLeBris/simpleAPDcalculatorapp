@@ -1,0 +1,241 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: aliceblue; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: dodgerblue;
+    padding: 5px 0 5px 0;
+    color: white;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+header img {
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+.input {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input p {
+    color: darkgray;
+}
+
+#results {
+    text-align: center ;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition : opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+#results.fade {
+    visibility: visible;
+    opacity: 1;
+}
+
+#results h3 {
+    background-color: dodgerblue;
+    color: white;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+#results h4 {
+    padding: 10px;
+}
+
+#results span {
+    font-weight: bold;
+    background-color: dodgerblue;
+    color: white;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+input {
+    background-color: rgb(240, 240, 240);
+    border: 0;
+    margin: 10px;
+    width: 300px;
+    font-size: 1.2em;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#flow_rate:hover {
+    box-shadow: 2px 2px 5px dodgerblue;
+    transition: 0.5s;
+}
+
+#flow_rate:focus {
+    outline: none;
+    border: solid 1px dodgerblue;
+    box-shadow: 2px 2px 5px dodgerblue;
+}
+
+#flow_rate::placeholder {
+    color: black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    appearance: textfield;
+}
+
+select {
+    background-color: rgb(240, 240, 240);
+    border: 0px;
+    appearance: none;
+    margin: 10px;
+    width: 300px;
+    font-size: 1.2em;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+select:focus {
+    outline: none;
+    border: solid 1px dodgerblue;
+}
+
+select:hover {
+    transition: 0.5s;
+    box-shadow: 2px 2px 5px dodgerblue;
+}
+
+option:checked {
+    display: none;
+}
+
+#calculate {
+    background-color: dodgerblue;
+    color: white;
+}
+
+#calculate:hover {
+    background-color: rgb(30, 101, 255);
+    transition: 0.5s;
+}
+
+.singular_APD {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap : 1rem;
+    max-width: 1300px;
+    margin: 0 20px;
+}
+
+@media screen and (min-width: 1300px) {
+    .singular_APD {
+        margin: 0 auto;
+    }
+}
+
+#linearAPD_result {
+    border-bottom: solid 1px dodgerblue;
+    margin: 0 80px;
+    padding-bottom: 20px;
+}
+
+.singularity {
+    border: solid 1px dodgerblue;
+    padding: 10px 0;
+    /* background-color: rgba(54, 156, 240, 0.1); */
+    border-radius: 5px
+    /* width: auto; */
+}
+
+.singularity img {
+    width: 100px;
+    /* background-color: white; */
+}
+
+.singularity p {
+    text-align: center;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: ghostwhite;
+    overflow: hidden;
+    padding-top: 50px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: dodgerblue;
+    display: block;
+    transition: 0.5s;
+}
+
+.sidenav a:hover {
+    text-decoration: underline;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+.sidenav p {
+    color:midnightblue;
+}
+
+.sidenav p a {
+    text-decoration: initial;
+    color: midnightblue;
+    padding: 0;
+    font-size: 16px;
+    display: initial;
+}
+
+#techInfo, #about  {
+    display: none;
+    padding: 4px 4px 4px 32px;
+    font-size: 16px;
+}

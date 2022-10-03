@@ -16,10 +16,10 @@
     <script src="nav.js" defer></script>
 </head>
 <body>
-    <header>
-        <img id="reset" src="/static/img/refresh.png" alt="refresh icon">
-        <h1>Simple APD calculator</h1>
-        <img id="menu" src="/static/img/menu.png" alt="menu icon" onclick="openNav()">
+    <header class="header">
+        <img id="reset" src="/static/img/refresh.png" alt="refresh icon" class="header__img">
+        <h1 class="header__h1">Simple APD calculator</h1>
+        <img id="menu" src="/static/img/menu.png" alt="menu icon" onclick="openNav()" class="header__img">
     </header>
     <nav id="sideNavigation" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -38,9 +38,9 @@
             contact : <a href="mailto:ludovic.lebris@gmail.com">ludovic.lebris@gmail.com</a>
         </p>
     </nav>
-    <div class="input">
-        <input id="flow_rate" type="number" name="flow_rate" placeholder="Enter flow rate in m³/h">
-        <select name="diameter" id="diameter" onchange="flowSpeedText()">
+    <div class="inputs">
+        <input id="flow_rate" type="number" name="flow_rate" placeholder="Enter flow rate in m³/h" class="inputs__input">
+        <select name="diameter" id="diameter" onchange="flowSpeedText()" class="inputs__select">
             <option value="0" disabled selected hidden>Select duct section</option>
             <option value="80">80</option>
             <option value="160">160</option>
