@@ -10,16 +10,16 @@
     <script src="nav.js" defer></script>
 </head>
 <body>
-    <header>
-        <img id="reset" src="/static/img/refresh.png" alt="refresh icon">
-        <h1>Calculs de PdC simple</h1>
-        <img id="menu" src="/static/img/menu.png" alt="menu icon" onclick="openNav()">
+    <header class="header">
+        <img id="reset" src="/static/img/refresh.png" alt="refresh icon" class="header__img">
+        <h1 class="header__h1">Calculs de PdC simple</h1>
+        <img id="menu" src="/static/img/menu.png" alt="menu icon" onclick="openNav()" class="header__img">
     </header>
     <nav id="sideNavigation" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">H</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="index.html">Language : english</a>
         <a href="javascript:void(0)" onclick="toggle('techInfo')">Informations techniques</a>
-        <p id="techInfo">
+        <p id="techInfo" class="toggleinfo">
             La méthode de calcul de ce logiciel est fortement inspirée par la méthode du  
             <a class="navLink" href="https://www.costic.com/">COSTIC</a>.<br>
             La formule utilisée pour les pertes de charge linéaire est l' 
