@@ -66,6 +66,8 @@ body {
 
 .sidenav p  {
     color: midnightblue;
+    display: none;
+    padding-left: 15px;
 }
 
 .sidenav p a {
